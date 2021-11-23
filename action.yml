@@ -1,11 +1,32 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Annotate'
+description: 'Allows user to add annotations to a GitHub Actions Workflow run'
+author: 'hipcamp'
 inputs:
-  milliseconds: # change this
+  level:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'annotation level'
+    default: 'notice'
+  message:
+    required: true
+    description: 'annotation message'
+  title:
+    required: false
+    description: 'annotation title'
+  file:
+    required: false
+    description: 'annotation file'
+  start-line:
+    required: false
+    description: 'annotation start-line'
+  end-line:
+    required: false
+    description: 'annotation end-line'
+  start-column:
+    required: false
+    description: 'annotation start-column'
+  end-column:
+    required: false
+    description: 'annotation end-column'
 runs:
   using: 'node12'
   main: 'dist/index.js'
